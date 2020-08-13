@@ -1,0 +1,27 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: rgba(75,127,210,1);
+    font-family: 'Lato', sans-serif;
+}
+body::-webkit-scrollbar {background: transparent;width: 10px;}
+
+body::-webkit-scrollbar-thumb {
+    background-color:#240d0d;
+    border-radius: 0.5em;
+    border-right: 1px solid rgba(75,127,210,1);
+}
+
+header {
+    text-align: center;
+    color:white;
+    text-shadow: 2px 2px 8px blue;
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+}
