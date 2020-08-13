@@ -2,7 +2,7 @@ import React from 'react';
 
 const Menu = (props) => {
   return (
-    <div className="seccion_opciones">
+    <div id="Menu"  >
       {props.children}
     </div>
   );

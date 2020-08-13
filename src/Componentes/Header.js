@@ -2,9 +2,9 @@ import React from 'react'
 const Header = (props) => {
   return (
     <header>
-      <h1 ondragstart="return false;" ondrop="return false;">
+      <h1 >
         ¡DIBUJA CON TU MOUSE!
-        <i class='fas fa-mouse-pointer' style={{fontSize:'48px',color:'white'}}>
+        <i className='fas fa-mouse-pointer' style={{fontSize:'48px',color:'white'}}>
         </i>
       </h1>
     </header>

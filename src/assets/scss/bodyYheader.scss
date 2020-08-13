@@ -1,0 +1,54 @@
+
+html{
+    height: 100vh;
+}
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Lato", sans-serif;
+    height: 100%;
+}
+main,header{
+    display: none;
+}
+
+#announcement{
+    display: block;
+}
+@media screen and (min-width: 768px) {
+    #announcement{
+        display: none;
+    }
+    main,
+    header {
+        display: block;
+        text-align: center;
+    }
+    
+
+    main {
+        display: flex;
+        width: 90%;
+        height: 500px;
+        margin: 0 auto;
+        border: 2px solid black;
+        flex-wrap: wrap;
+        max-width: 1500px;
+    }
+    #canvas_container {
+        background-color: blue;
+        
+    }
+    #canvas,#canvas_container,#Menu {
+        height: 100%;
+    }
+
+    #Menu,
+    #canvas_container {
+        flex-grow: 1;
+        flex-basis: 100px;
+
+    }
+    
+}
