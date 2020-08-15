@@ -1,26 +1,22 @@
+@import url(https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@600&display=swap);
 
-html{
-    height: 100vh;
-}
+
+
 body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Lato", sans-serif;
-    height: 100%;
-}
-main,header{
-    display: none;
-}
+    font-family: "Baloo Tamma 2", sans-serif;
 
-#announcement{
-    display: block;
 }
+main,header{display: none;}
+
+#announcement{display: block;}
+
 @media screen and (min-width: 768px) {
-    #announcement{
-        display: none;
-    }
-    main,
+    
+    #announcement{ display: none;}
+    
     header {
         display: block;
         text-align: center;
@@ -29,26 +25,14 @@ main,header{
 
     main {
         display: flex;
-        width: 90%;
-        height: 500px;
+        width: 95%;
+        height: 500px !important;
         margin: 0 auto;
-        border: 2px solid black;
-        flex-wrap: wrap;
-        max-width: 1500px;
-    }
-    #canvas_container {
-        background-color: blue;
         
+        max-width: 1500px;
+        margin-bottom: 2rem;
     }
-    #canvas,#canvas_container,#Menu {
-        height: 100%;
-    }
-
-    #Menu,
-    #canvas_container {
-        flex-grow: 1;
-        flex-basis: 100px;
-
-    }
+    #canvas_container,#Menu{flex-basis: 50%; height: 500px;}
+    
     
 }

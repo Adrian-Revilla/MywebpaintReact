@@ -3,9 +3,8 @@ const Header = (props) => {
   return (
     <header>
       <h1 >
-        ¡DIBUJA CON TU MOUSE!
-        <i className='fas fa-mouse-pointer' style={{fontSize:'48px',color:'white'}}>
-        </i>
+        <i className='fas fa-mouse-pointer' style={{ fontSize: '38px' }}></i>
+        &nbsp; ¡Dibuja con tu mouse!
       </h1>
     </header>
 
