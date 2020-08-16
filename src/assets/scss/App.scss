@@ -1,5 +1,65 @@
+@import url(https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@600&display=swap);
+@import './normalize.scss';
 @import './bodyYheader.scss';
 @import './Canvas.scss';
 @import './Opciones.scss';
 @import './guiaRapida.scss';
 @import './media_querys.scss';
+
+.header{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  #title{
+    margin-right: auto;
+  }
+
+  #author{
+    display: block;
+  
+
+  
+  }
+  padding: 1rem;
+  #github{
+    display: block; 
+    transition: all 100ms;
+    color: rgba($color: white, $alpha: 0.8);
+    
+    &:hover,&:focus{
+      color: rgba($color: white, $alpha: 1);
+      
+    }
+  }
+
+}
+
+
+.arrow_box {
+	position: relative;
+	background: #9164d5;
+	border: 2px solid #c2e1f5;
+}
+.arrow_box:after, .arrow_box:before {
+	left: 100%;
+	top: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.arrow_box:after {
+	border-color: rgba(145, 100, 213, 0);
+	border-left-color: #9164d5;
+	border-width: 24px;
+	margin-top: -24px;
+}
+.arrow_box:before {
+	border-color: rgba(194, 225, 245, 0);
+	border-left-color: #c2e1f5;
+	border-width: 27px;
+	margin-top: -27px;
+}

@@ -70,7 +70,7 @@ const App = () => {
 
   const ChangeColor = (e) => {
     let _e = e.target.nodeName.toLowerCase();
-    if (_e == "i") {
+    if (_e === "i") {
       SetBrush(`${getComputedStyle(e.target.parentElement).backgroundColor}`)
       setColorName(`${e.target.parentElement.innerText}`)
     } else {
