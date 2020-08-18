@@ -1,0 +1,36 @@
+.header {
+    
+    display: none;
+    align-items: center;
+    justify-content: flex-end;
+    
+    box-shadow: 0px 1px 5px #111111;
+    background-color: #4f2991;
+
+    margin-bottom: 1em;
+    padding: 1rem;
+    color: white;
+
+    #title {
+        margin-right: auto;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    #author {
+        display: block;
+    }
+
+    #github {
+        display: block;
+        transition: all 100ms;
+        color: rgba($color: white, $alpha: 0.8);
+
+        &:hover,
+        &:focus {
+            color: rgba($color: white, $alpha: 1);
+        }
+    }
+}
+
+

@@ -1,44 +1,31 @@
-%botones{
-    display: block;
-    color: white;
-    font-weight: bold;
-    padding: 0.3rem;
-    box-shadow: 0px 5px rgba($color: black, $alpha: 0.5);
-    transition: 100ms all;
-    font-size: larger;
-    border: 5px solid transparent;
-    border-radius: 1rem;
-    width: 80%;
-    cursor: pointer;
-    
-    &:active  {
-        transform: translate(0px, 5px);
-        box-shadow: 0px 0px black;
-        background-color: none;
-        
-    }
-    &:focus{
-        outline: none;
-        border-color:  rgba($color: white, $alpha: 0.3);
-    }
-}
-
 #Menu {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
     button {
-        
-        @extend %botones;
+        display: block;
+        color: white;
+        font-weight: bold;
+        padding: 0.3rem;
+        box-shadow: 0px 5px rgba($color: black, $alpha: 0.5);
+        transition: 100ms all;
+        font-size: larger;
+        border: 5px solid transparent;
+        border-radius: 1rem;
+        width: 80%;
+        cursor: pointer;
+
+        &:active {
+            transform: translate(0px, 5px);
+            box-shadow: 0px 0px black;
+            background-color: none;
+        }
+        &:focus {
+            outline: none;
+            border-color: rgba($color: white, $alpha: 0.3);
+        }
     }
 }
-
-
-
 
 #red {
-    background-color: #F8373B;
+    background-color: #f8373b;
 }
 
 #green {
@@ -49,7 +36,8 @@
     background-color: #343497;
 }
 
-#help,#limpiar,#limpiar_partes {
+#help,
+#limpiar,
+#limpiar_partes {
     background-color: #1f1616;
 }
-

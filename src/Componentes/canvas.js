@@ -2,13 +2,15 @@ import React from 'react'
 
 const Canvas = (props) => {
   return (<div id="canvas_container">
-    <canvas id="canvas" width={`${props.canvasWidth}`} height="500"
-      onMouseDown={props.Draw}
+    <canvas width={`${props.CanvasWidthSize}`} height="500"
+      id="canvas"
+      className={`${props.CanvasIcon}`} 
+      onMouseDown={props.StartDraw}
       onMouseMove={props.MovingDraw}    
-      onMouseUp={props.outDraw}
-      onMouseLeave={props.outCanvas}
+      onMouseUp={props.OutDrawOrOutCanvas}
+      onMouseLeave={props.OutDrawOrOutCanvas}
     >
-      CANVAS NO SE PUEDE DESPLEGAR
+      El canvas no esta soportado
     </canvas>
   </div>)
 

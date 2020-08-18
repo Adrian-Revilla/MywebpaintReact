@@ -1,107 +1,179 @@
 import React, { useState, useEffect } from 'react';
 import Header from './Header'
 import Canvas from './canvas'
-// import GuiaRapida from './GuiaRapida';
 import Opciones from './Opciones';
 import Menu from './Menu';
+
+// import GuiaRapida from './GuiaRapida';
 // puedo importar asi url('${logo}')
 // o  asi  import logo from '../assets/images/logo.svg';
 
 const App = () => {
 
+  //CONTEXTO DE CANVAS API
+  let [CanvasContext, setCanvasContext] = useState('');
 
-  let [size, setSize] = useState('');
-  let [canvasContext, setCanvasContext] = useState('');
+  // SIZE DEL CANVAS
+  let [CanvasWidthSize, setCanvasWidthSize] = useState('');
 
-  let [posX, setPosX] = useState(0);
-  let [posY, setPosY] = useState(0);
-  let [isMouseDown, setisMouseDown] = useState(false);
-  let [Brush, SetBrush] = useState('rgb(52, 52, 151)');
-  let [ColorName, setColorName] = useState('Azul');
+  //ICONO ACTUAL DEL <CANVAS></CANVAS
+  let [CanvasIcon, setCanvasIcon] = useState('Brush');
 
-  useEffect(() => setCanvasContext(document.querySelector('canvas').getContext('2d')), [canvasContext])
+  //DETECTAR CUANDO EL MOUSE ESTA PRESIONADO
+  let [IsMousePressed, setIsMousePressed] = useState(false);
 
+  // COLOR DEL PINCEL O BRUSH, 
+  let [BrushColor, SetBrushColor] = useState('rgb(52, 52, 151)');
+
+  //EL NOMBRE DEL COLOR ACTUAL EN EL H2 DE OPCIONES
+  let [BrushColorName, SetBrushColorName] = useState(' Azul');
+
+  let [VisibleModal, setVisibleModal] = useState(['none', 'MyModal']);
+  
+
+  // CONTEXTO DE LA API CANVAS
+  useEffect(() => setCanvasContext(document.querySelector('canvas').getContext('2d')), [CanvasContext])
+
+
+  // AJUSTAR EL TAMAÑO DEL <CANVAS></CANVAS>
+  // math.trunc quita los decimales del offset width
   useEffect(() => {
-    if (size === '') {
-      setSize(Math.trunc(document.getElementById('canvas_container').offsetWidth));
+    let CanvasContainerOffsetWidth;
+
+    if (CanvasWidthSize === '') {
+      CanvasContainerOffsetWidth = document.getElementById('canvas_container').offsetWidth;
+      setCanvasWidthSize(Math.trunc(CanvasContainerOffsetWidth));
     }
+
     window.addEventListener('resize', () => {
-      console.log('en resize')
-      setSize(Math.trunc(document.getElementById('canvas_container').offsetWidth));
+      CanvasContainerOffsetWidth = document.getElementById('canvas_container').offsetWidth;
+      setCanvasWidthSize(Math.trunc(CanvasContainerOffsetWidth));
     })
 
-  }, [size]);
+  }, [CanvasWidthSize]);
 
 
-  const Draw = (e) => {
-    if (!isMouseDown) {
+  const StartDraw = (e) => {
+    if (!IsMousePressed) {
 
-      canvasContext.strokeStyle = Brush;
-      canvasContext.lineWidth = 5;
-      canvasContext.lineCap = "round";
-      canvasContext.beginPath();
-      canvasContext.moveTo(e.nativeEvent.offsetX, e.nativeEvent.offsetY);
-      setisMouseDown(true);
+      if (CanvasIcon === 'Brush') {
 
+        CanvasContext.strokeStyle = BrushColor;
+        CanvasContext.lineWidth = 5;
+        CanvasContext.lineCap = "round";
+        CanvasContext.beginPath();
+        CanvasContext.moveTo(e.nativeEvent.offsetX, e.nativeEvent.offsetY);
+
+      } else { CanvasContext.clearRect(e.nativeEvent.offsetX, e.nativeEvent.offsetY, 32, 32) }
+      setIsMousePressed(true);
     }
   }
 
   const MovingDraw = (e) => {
 
-    if (isMouseDown) {
-      canvasContext.lineTo(e.nativeEvent.offsetX, e.nativeEvent.offsetY);
-      canvasContext.stroke();
+    if (IsMousePressed) {
+      if (CanvasIcon === 'Brush') {
+        CanvasContext.lineTo(e.nativeEvent.offsetX, e.nativeEvent.offsetY);
+        CanvasContext.stroke();
+      } else { CanvasContext.clearRect(e.nativeEvent.offsetX, e.nativeEvent.offsetY, 32, 32) }
     }
   }
-  const outDraw = () => {
 
-    if (isMouseDown) {
-      canvasContext.closePath();
-      setisMouseDown(false);
-    }
 
-  }
-  const outCanvas = () => {
-    if (isMouseDown) {
-      canvasContext.closePath();
-      setisMouseDown(false);
+
+  const OutDrawOrOutCanvas = () => {
+    if (IsMousePressed) {
+      if (CanvasIcon === 'Brush') {
+        CanvasContext.closePath();
+
+      }
+      setIsMousePressed(false);
     }
   }
+
 
   const ChangeColor = (e) => {
     let _e = e.target.nodeName.toLowerCase();
     if (_e === "i") {
-      SetBrush(`${getComputedStyle(e.target.parentElement).backgroundColor}`)
-      setColorName(`${e.target.parentElement.innerText}`)
+      SetBrushColor(`${getComputedStyle(e.target.parentElement).backgroundColor}`)
+      SetBrushColorName(`${e.target.parentElement.innerText}`)
     } else {
-      SetBrush(`${getComputedStyle(e.target).backgroundColor}`)
-      setColorName(`${e.target.innerText}`)
+      SetBrushColor(`${getComputedStyle(e.target).backgroundColor}`)
+      SetBrushColorName(`${e.target.innerText}`)
     }
-  
+
+    CanvasIconBrush()
   }
 
+  const cleanAll = () => {
+    let canvas = document.querySelector('canvas');
+    CanvasContext.clearRect(0, 0, canvas.width, canvas.height);
+  }
+
+
+  const CanvasIconBrush = () => setCanvasIcon('Brush');
+  const CanvasIconEraser = () => setCanvasIcon('Eraser');
+
+  const ActiveModal = () => {
+    setVisibleModal(['block','MyModal active']);
+  }
+  const HideModal = () => {
+    setVisibleModal(['block','MyModal hide']);
+  }
+  
 
   return (
 
     <>
-      <h1 id="announcement">LA APLICACION NO ESTA DESARROLLADA A ESTE PUNTO</h1>
+      {/* MENSAJE DE ALERTA */}
+      <div id="announcement">
+        <h1>La aplicacion no esta desarrollada a este punto :)</h1>
+
+      </div>
+
       <Header />
+
+      {/* CONTENDOR FLEX. */}
       <main>
 
-        <Canvas canvasWidth={size} posX={posX} posY={posY} Draw={Draw} MovingDraw={MovingDraw}
-          outDraw={outDraw} outCanvas={outCanvas}
-
+        <Canvas
+          CanvasWidthSize={CanvasWidthSize}
+          StartDraw={StartDraw}
+          MovingDraw={MovingDraw}
+          OutDrawOrOutCanvas={OutDrawOrOutCanvas}
+          CanvasIcon={CanvasIcon}
         />
 
         <Menu>
 
           {/* <GuiaRapida /> */}
-          <Opciones ChangeColor={ChangeColor} Brush={Brush} ColorName={ColorName} />
+          <Opciones
+            ChangeColor={ChangeColor}
+            BrushColor={BrushColor}
+            BrushColorName={BrushColorName}
+            CanvasIconEraser={CanvasIconEraser}
+            cleanAll={cleanAll}
+            DisplayModal={ActiveModal}
+          />
 
         </Menu>
 
       </main>
 
+      <section className={`${VisibleModal[1]}`} style={{display:`${VisibleModal[0]}`}} >
+        <section className="MyModal-body">
+          <div className="header-flex">
+            <p>HOLAHOLA HOLAHOAL</p>
+            <button onClick={HideModal}>X</button>
+          </div>
+          <div className="section-flex">
+            <p>1</p>
+            <p>2</p>
+            <p>3</p>
+            <p>4</p>
+          </div>
+        </section>
+      </section>
 
     </>
 
