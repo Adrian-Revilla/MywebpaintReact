@@ -3,7 +3,7 @@ import Header from './Header'
 import Canvas from './canvas'
 import Opciones from './Opciones';
 import Menu from './Menu';
-
+import { Animated } from 'react-animated-css'
 // import GuiaRapida from './GuiaRapida';
 // puedo importar asi url('${logo}')
 // o  asi  import logo from '../assets/images/logo.svg';
@@ -28,8 +28,12 @@ const App = () => {
   //EL NOMBRE DEL COLOR ACTUAL EN EL H2 DE OPCIONES
   let [BrushColorName, SetBrushColorName] = useState(' Azul');
 
-  let [VisibleModal, setVisibleModal] = useState(['none', 'MyModal']);
-  
+  let [VisibleModal, setVisibleModal] = useState('none');
+
+  let [Animation, setAnimation] = useState(false);
+
+
+  let [Disabled, setDisabled] = useState(false);
 
   // CONTEXTO DE LA API CANVAS
   useEffect(() => setCanvasContext(document.querySelector('canvas').getContext('2d')), [CanvasContext])
@@ -52,6 +56,22 @@ const App = () => {
 
   }, [CanvasWidthSize]);
 
+  /* 
+  setAnimation(false);
+        setDisabled(false);
+        setTimeout(() => setVisibleModal('none') ,400);
+  */
+  useEffect(() => {
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && VisibleModal === 'block') {
+        console.log('KEY PRESS')
+        setAnimation(false);
+        setDisabled(false);
+        setTimeout(() => setVisibleModal('none'), 400);
+      }
+
+    })
+  })
 
   const StartDraw = (e) => {
     if (!IsMousePressed) {
@@ -114,13 +134,35 @@ const App = () => {
   const CanvasIconBrush = () => setCanvasIcon('Brush');
   const CanvasIconEraser = () => setCanvasIcon('Eraser');
 
-  const ActiveModal = () => {
-    setVisibleModal(['block','MyModal active']);
+  const ToggleModal = () => {
+    // if (VisibleModal === 'none') {
+    //   setVisibleModal('block');
+    // setDisabled(true)
+    // setAnimation(true)
+    // } 
+    if (VisibleModal === 'none') {
+      setVisibleModal('block')
+      setAnimation(true);
+      setDisabled(true);
+      document.documentElement.focus();
+    } else {
+      setAnimation(false);
+      setDisabled(false);
+      setTimeout(() => setVisibleModal('none'), 400);
+    }
+
   }
-  const HideModal = () => {
-    setVisibleModal(['block','MyModal hide']);
-  }
-  
+  // const hide = () => setVisibleModal(VisibleModal + ' animation-reverse');
+
+  /* 
+    let [VisibleModal, setVisibleModal] = useState('block');
+    
+    let [Animation, setAnimation] = useState(false);
+  */
+
+
+
+
 
   return (
 
@@ -153,27 +195,36 @@ const App = () => {
             BrushColorName={BrushColorName}
             CanvasIconEraser={CanvasIconEraser}
             cleanAll={cleanAll}
-            DisplayModal={ActiveModal}
+            ToggleModal={ToggleModal}
+            Disabled={Disabled}
           />
 
         </Menu>
 
       </main>
 
-      <section className={`${VisibleModal[1]}`} style={{display:`${VisibleModal[0]}`}} >
-        <section className="MyModal-body">
-          <div className="header-flex">
-            <p>HOLAHOLA HOLAHOAL</p>
-            <button onClick={HideModal}>X</button>
-          </div>
-          <div className="section-flex">
-            <p>1</p>
-            <p>2</p>
-            <p>3</p>
-            <p>4</p>
-          </div>
-        </section>
-      </section>
+      <div className="temporal" style={{ display: `${VisibleModal}` }}>
+        <Animated animationIn="fadeInUp" animationOut="zoomOut" isVisible={Animation} animateOnMount={false} >
+          <section className={`MyModal`}   >
+            <section className="MyModal-body">
+              <div className="header-flex">
+                <h3>Modal Title</h3>
+                <button id="header_exit" onClick={ToggleModal}>Cerrar <i class="fas fa-external-link-alt"></i></button>
+              </div>
+              <div className="section-flex">
+                <p>1</p>
+                <p>2</p>
+                <p>3</p>
+                <p>4</p>
+              </div>
+              <button id="exit">OK</button>
+            </section>
+          </section>
+        </Animated>
+
+
+      </div>
+
 
     </>
 

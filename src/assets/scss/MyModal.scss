@@ -1,67 +1,95 @@
-@keyframes HaciaAdentro{
-  from{
-    display: none;
-    opacity: 0;
-    top: -100%;
-  }
-  to{
-    display: block;
-    opacity: 1;
-    top: 5%;
-  }
-}
-@keyframes HaciaAfuera{
+
+// @keyframes shadow-drop-2-center {
+//   0% {
+//     visibility: visible;
+
+//     transform: translate(-50%,-5%) scale(0.7);
+//   }
+//   100% {
+//     visibility: visible;
+
+//     transform: translate(-50%,-5%) scale(1);
+//     opacity: 1;
+    
+//   }
+// }
+
+// @keyframes shadow-drop-2-center-reverse {
+//   0% {
+    
+
   
-  from{
+//     opacity: 1;
+    
+//   }
+  
+//   100% {
+    
+  
+//     opacity: 0;
+   
 
-    opacity: 1;
-    top: 5%;
-    display: block;
-  }
-  to{
-    opacity: 0;
-    top: -100%;
-    display: none;
-  }
-}
+//   }
+  
+// }
 
 
-.active{
-  animation-name: HaciaAdentro;  
-  animation-duration: 1s;
-  animation-fill-mode: forwards;
-}
-.hide{
-  animation-name: HaciaAfuera;  
-  animation-duration: 1s;
-  animation-fill-mode: forwards;
+// .animation {
+//             animation: shadow-drop-2-center 500ms ease-out both;         
+// }
+// .animation-reverse{
+//   animation: shadow-drop-2-center-reverse 500ms ease-out both;         
+//   // visibility: hidden;
+// }
+
+.temporal{
+top: 0;
+position: absolute;
+width: 600px;
+max-width: 100%;
+position: absolute;
+left: 50%;
+top: 5%;
+transform: translate(-50%,-5%);
+width: 50%;
 
 }
 
 .MyModal{
-  position: absolute;
-  left: 50%;
+ 
+  box-shadow: 0px 0px 3px #1f1616;
+  background-color: white;
+  color: #1f1616;
 
-
-  transform: translate(-50%,-5%);
-  background-color: red;
-  width: 50%;
-  border: 0.2px ridge #111111;
-  border-radius:.2em;
   .MyModal-body{
     display: flex;
     flex-flow: column;
-    padding: .4em;
+  
   }
   .header-flex{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: .3em;    
     
+    #header_exit{
+      
+      min-width: 50px;
+      i{
+        font-size: 24x !important;
+        vertical-align: middle !important;
+      }
+    }
   }
   .section-flex{
     display: flex;
     flex-direction: column;
+    padding: .3em;
+    font-family: barlow,sans-serif;
   }
 
+  #exit{
+    padding: .2em;
+    border-radius: 0em;
+  }
 }

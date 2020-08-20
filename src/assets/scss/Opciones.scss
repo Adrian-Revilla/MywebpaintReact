@@ -20,6 +20,14 @@
         &:focus {
             outline: none;
             border-color: rgba($color: white, $alpha: 0.3);
+            
+        }
+        &:disabled{
+            background-color: black;
+            cursor: not-allowed;
+            transform: translate(0px, 5px);
+            box-shadow: none;
+            border-color: transparent;
         }
     }
 }
