@@ -16,7 +16,6 @@ const Modal = (props) => {
               <p><i class="fas fa-check"></i> Haz click en los botones para cambiar el color del pincel</p>
               <p><i class="fas fa-check"></i> El <q>Borrador</q> borra una area especifica del lienzo  </p>
               <p><i class="fas fa-check"></i> El boton <q>Limpiar</q> hace lo que indica, ¡limpia todo el lienzo!</p>
-              
             </div>
             <button id="exit" onClick={props.ToggleModal}><i class="far fa-thumbs-up"></i> ¡Entendido!</button>
           </section>
