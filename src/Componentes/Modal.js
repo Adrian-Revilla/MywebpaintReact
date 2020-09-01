@@ -12,6 +12,7 @@ const Modal = (props) => {
             </div>
             
             <div className="section-flex">
+              <p><i class="fas fa-check"></i>Pulsa con el boton izquierdo de tu mouse y arrastralo por el lienzo para pintarlo </p>
               <p><i class="fas fa-check"></i> Haz click en los botones para cambiar el color del pincel</p>
               <p><i class="fas fa-check"></i> El <q>Borrador</q> borra una area especifica del lienzo  </p>
               <p><i class="fas fa-check"></i> El boton <q>Limpiar</q> hace lo que indica, ¡limpia todo el lienzo!</p>
