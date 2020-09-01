@@ -1,95 +1,50 @@
-
-// @keyframes shadow-drop-2-center {
-//   0% {
-//     visibility: visible;
-
-//     transform: translate(-50%,-5%) scale(0.7);
-//   }
-//   100% {
-//     visibility: visible;
-
-//     transform: translate(-50%,-5%) scale(1);
-//     opacity: 1;
-    
-//   }
-// }
-
-// @keyframes shadow-drop-2-center-reverse {
-//   0% {
-    
-
-  
-//     opacity: 1;
-    
-//   }
-  
-//   100% {
-    
-  
-//     opacity: 0;
-   
-
-//   }
-  
-// }
-
-
-// .animation {
-//             animation: shadow-drop-2-center 500ms ease-out both;         
-// }
-// .animation-reverse{
-//   animation: shadow-drop-2-center-reverse 500ms ease-out both;         
-//   // visibility: hidden;
-// }
-
-.temporal{
-top: 0;
-position: absolute;
-width: 600px;
-max-width: 100%;
-position: absolute;
-left: 50%;
-top: 5%;
-transform: translate(-50%,-5%);
-width: 50%;
-
+.Absolute {
+  top: 0;
+  position: absolute;
+  width: 600px;
+  max-width: 100%;
+  position: absolute;
+  left: 50%;
+  top: 5%;
+  transform: translate(-50%, -5%);
+  width: 50%;
 }
 
-.MyModal{
- 
+.MyModal {
   box-shadow: 0px 0px 3px #1f1616;
   background-color: white;
   color: #1f1616;
 
-  .MyModal-body{
+  .MyModal-body {
     display: flex;
     flex-flow: column;
+
+    .header-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.3em;
   
-  }
-  .header-flex{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: .3em;    
-    
-    #header_exit{
-      
-      min-width: 50px;
-      i{
-        font-size: 24x !important;
-        vertical-align: middle !important;
+      #header_exit {
+        opacity: 0.6;
+        cursor: pointer;
+        font-size: 2rem;
+       transition:opacity 500ms; 
+       &:hover,&:focus{
+        opacity: 1;
+       }
       }
     }
   }
-  .section-flex{
+  
+  .section-flex {
     display: flex;
     flex-direction: column;
-    padding: .3em;
-    font-family: barlow,sans-serif;
+    padding: 0.3em;
+    font-family: barlow, sans-serif;
   }
 
-  #exit{
-    padding: .2em;
-    border-radius: 0em;
+  #exit {
+
   }
 }

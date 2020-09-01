@@ -12,7 +12,8 @@ const Canvas = (props) => {
     >
       El canvas no esta soportado
     </canvas>
-  </div>)
+  </div>
+  )
 
 }
 

@@ -1,5 +1,6 @@
 main {
 
+  // estilos que varian en el media query
   display: none;
   width: 95%;
   height: 500px;
@@ -7,21 +8,7 @@ main {
 
   max-width: 1500px;
 
-
-  #Menu{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-  }
-
-
-
-  #canvas_container,
-  #Menu {
-    
-      flex-basis: 50%;
-      height: 500px;
-  }
-
+  
+  // los hijos del main, el lienzo y el menu de opciones
+  #canvas_container,#Menu {flex-basis: 50%;}
 }

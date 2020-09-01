@@ -10,18 +10,16 @@
     margin-bottom: 1em;
     padding: 1rem;
     color: white;
-
+    
+    //titulo de la app
     #title {
         margin-right: auto;
         margin-top: 0;
         margin-bottom: 0;
     }
 
-    #author {
-        display: block;
-        font-family: barlow,sans-serif;
-    }
-
+   
+    //link al github
     #github {
         display: block;
         transition: all 100ms;

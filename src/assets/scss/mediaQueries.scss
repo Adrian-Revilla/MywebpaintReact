@@ -1,5 +1,4 @@
-
-
+// el anuncio que aparece cuando el width es muy pequeño
 #announcement {
   display: flex;
   justify-content: center;
@@ -12,12 +11,10 @@
   #announcement {
       display: none;
   }
-
-  .header {
+  
+  //APARECE EL HEADER Y EL MAIN en la pagina
+  .header,main {
       display: flex;
   }
 
-  main {
-      display: flex;
-  }
 }
