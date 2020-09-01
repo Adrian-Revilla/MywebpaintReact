@@ -208,7 +208,7 @@ const App = () => {
           <section className={`MyModal`}   >
             <section className="MyModal-body">
               <div className="header-flex">
-                <h3>Modal Title</h3>
+                <h2>Modal Title</h2>
                 <button id="header_exit" onClick={ToggleModal}>Cerrar <i class="fas fa-external-link-alt"></i></button>
               </div>
               <div className="section-flex">
