@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/static/css/main.58b58455.chunk.css",
-    "main.js": "/static/js/main.3b042dcf.chunk.js",
-    "main.js.map": "/static/js/main.3b042dcf.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.2659dcd9.js",
-    "runtime-main.js.map": "/static/js/runtime-main.2659dcd9.js.map",
-    "static/js/2.398034d5.chunk.js": "/static/js/2.398034d5.chunk.js",
-    "static/js/2.398034d5.chunk.js.map": "/static/js/2.398034d5.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.299cc001606f525a5e437769c4663b1d.js": "/precache-manifest.299cc001606f525a5e437769c4663b1d.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/main.58b58455.chunk.css.map": "/static/css/main.58b58455.chunk.css.map",
-    "static/js/2.398034d5.chunk.js.LICENSE.txt": "/static/js/2.398034d5.chunk.js.LICENSE.txt",
-    "static/media/App.scss": "/static/media/pincel.1f27b1c5.ico"
+    "main.css": "/MywebpaintReact/static/css/main.8bca55f5.chunk.css",
+    "main.js": "/MywebpaintReact/static/js/main.3b042dcf.chunk.js",
+    "main.js.map": "/MywebpaintReact/static/js/main.3b042dcf.chunk.js.map",
+    "runtime-main.js": "/MywebpaintReact/static/js/runtime-main.23bbfde0.js",
+    "runtime-main.js.map": "/MywebpaintReact/static/js/runtime-main.23bbfde0.js.map",
+    "static/js/2.398034d5.chunk.js": "/MywebpaintReact/static/js/2.398034d5.chunk.js",
+    "static/js/2.398034d5.chunk.js.map": "/MywebpaintReact/static/js/2.398034d5.chunk.js.map",
+    "index.html": "/MywebpaintReact/index.html",
+    "precache-manifest.10820b7bc069b74f94cd7e6d9e4c1822.js": "/MywebpaintReact/precache-manifest.10820b7bc069b74f94cd7e6d9e4c1822.js",
+    "service-worker.js": "/MywebpaintReact/service-worker.js",
+    "static/css/main.8bca55f5.chunk.css.map": "/MywebpaintReact/static/css/main.8bca55f5.chunk.css.map",
+    "static/js/2.398034d5.chunk.js.LICENSE.txt": "/MywebpaintReact/static/js/2.398034d5.chunk.js.LICENSE.txt",
+    "static/media/App.scss": "/MywebpaintReact/static/media/pincel.1f27b1c5.ico"
   },
   "entrypoints": [
-    "static/js/runtime-main.2659dcd9.js",
+    "static/js/runtime-main.23bbfde0.js",
     "static/js/2.398034d5.chunk.js",
-    "static/css/main.58b58455.chunk.css",
+    "static/css/main.8bca55f5.chunk.css",
     "static/js/main.3b042dcf.chunk.js"
   ]
 }
