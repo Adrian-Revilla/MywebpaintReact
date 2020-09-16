@@ -39,7 +39,8 @@ Este repositorio contiene una aplicación que se ejecuta en el frontend y sirve 
 
 ### Notas sobre el repositorio
 * _Se usa React Hooks, (useState y useEffect)_
-* src/index.js es el punto de inicio de la app, aqui se importan todos los demas modulos (tanto los estilos como imagenes)
+* _Se usa Scss_ (Su punto de inicio es el App.scss)
+* src/index.js es el punto de inicio de la app, aqui se importan todos los demas modulos (estilos y componentes de Reactjs)
 * src/Componentes/App.js es donde reside la raiz del la aplicación de React, se importan los componentes listados en src/Componentes/, aqui están los metodos y estados que necesita la app para funcionar.
 * La aplicacion no funciona en dispositivos donde el ancho de la pantalla  sea menor a 768px, 
 (**Esto se debe a que, considerando que los dispositivos con un ancho de pantalla menor a 768px manejan 
